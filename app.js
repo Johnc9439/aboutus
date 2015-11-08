@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var fs = require('fs');
 // var filePath = 'text';
-// var info = JSON.parse(fs.readFileSync(filePath));
+var info = JSON.parse(fs.readFileSync(filePath));
 // Connect to MongoDB
 var mongo = require('mongodb');
 var monk = require('monk');
