@@ -5,6 +5,17 @@ var path = require('path');
 var fs = require('fs');
 var filePath = 'text';
 var info = JSON.parse(fs.readFileSync(filePath));
+// Connect to MongoDB
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk(' luffy.ee.ncku.edu.tw:27017/team19');
+// Allow router to access db
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
+app.use('/', routes);
+app.use('/users', users);
 app.use(express.static('public'));
 //app.get('/',function(req,res){
 //	res.sendFile(path.join(__dirname+'/index.html'));
