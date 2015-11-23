@@ -1,138 +1,60 @@
-<!DOCTYPE html>  
-<html>  
-<head>  	
-<title> Sign-Up</title>
-<link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon" >
-<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-<script src="javascript/signup.js"></script>
-<link rel="stylesheet" href="css/signup.css" type="text/css" media="all" /> 
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="en" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="en" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="en" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Sign up</title>
+<link rel="stylesheet" type="text/css" href="login.css" />
 
+<header>
+<div class="wrapper">
+			<img src="img/logo.png" alt="Secret Garden" class="logo">
+			<a href="#" class="menu_icon" id="menu_icon"></a>
+			<nav id="nav_menu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Journal</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Sign Up</a></li>
+				</ul>
+			</nav>
 
-</head>  
-<body> 
-        
-      <div class= "title">
-	  <h1> Secret Garden </h1>
-	</div>
+			<!--
+			<ul class="social">
+				<li><a class="fb" href="#"></a></li>
+				<li><a class="twitter" href="#"></a></li>
+				<li><a class="gplus" href="#"></a></li>
+			</ul>
+			-->
+		</div>
+</header>
+</head>
+<body>
+<br></br>
+<br></br>
 
-	<div id="cssmenu" class = "align-center" >
-          <ul>
-   		<li class='active'><a href="/">Home</a></li>
-   		<li><a href="/products">Products</a></li>
-   		<li><a href="/aboutus">About Us</a></li>
-   		<li><a href="/contact">Contact</a></li>
-		<li><a href="/Signup">Sign Up</a><li>
-	  </ul>
-	</div>	
-
-
-
-<<<<<<< HEAD
-	<div class="container"> 
-	    <h3>Login</h3>
-  		<label>username：</label><input type="text" id="username" name="username" /><br> 
-		<label>password:</label><input type="password" id="password" name="password" /><br>
-  		<input type="submit" value=" sign-up your account" /><br>  
-   </div> 
-=======
-	<div class="signup">  
-  	<!--
-  	<label>username：</label><input type="text" id="username" name="username" /><br> 
-	<label>password:</label><input type="password" id="password" name="password" /><br>
-  	<label>email：</label><input type="text" id="email" name="email" /><br>  
-  	<input type="submit" value=" sign-up your account" /><br>
-  	-->
-  	<form name="adduser" action="/adduser" method="post">
-  	  Username: <input type="text" name="username" placeholder="Enter Username">
-  	  Email: <input type="email" name="email" placeholder="Enter Email">
-  	  Password: <input type="password" name="password" placeholder="Enter Password">
-  	  <input type="submit" value="Submit">
-  	</form>
-	</div> 
-
-<div class="form">
-      
-      <ul class="tab-group">
-        <li class="tab active"><a href="#signup">Sign Up</a></li>
-        <li class="tab"><a href="#login">Log In</a></li>
-      </ul>
-      
-      <div class="tab-content">
-        <div id="signup">   
-          <h1>Sign Up for Free</h1>
-          
-          <form action="/" method="post">
-          
-          <div class="top-row">
-            <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
-            </div>
-        
-            <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text"required autocomplete="off"/>
-            </div>
-          </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block"/>Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
-            <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email"required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password"required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block"/>Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
-  	 
->>>>>>> 3f8ab3f91110068f5828959eff4a2fcd0dda3a56
-</body>  
-</html> 
-
-
+<div class="container">
+	<section id="content">
+		<form action="">
+			<h1>Login</h1>
+			<div>
+				<input type="text" placeholder="Username" required="" id="username" />
+			</div>
+			<div>
+				<input type="password" placeholder="Password" required="" id="password" />
+			</div>
+			<div>
+				<input type="submit" value="Log in" />
+				<a href="#">Lost your password?</a>
+				<a href="register.html">Register</a>
+			</div>
+		</form><!-- form -->
+		<div class="button">
+			
+		</div><!-- button -->
+	</section><!-- content -->
+</div><!-- container -->
+</body>
+</html>
