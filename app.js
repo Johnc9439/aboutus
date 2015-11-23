@@ -60,6 +60,13 @@ app.get('/signup', function (req, res) {
   });
 
 
+app.get('/register', function (req, res) {
+  res.sendFile(path.join(__dirname+'/public/html/register.html'));
+  });
+
+
+
+
 
 app.listen(8171);
 console.log('Server run');
