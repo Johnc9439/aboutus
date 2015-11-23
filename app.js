@@ -37,19 +37,25 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/html/index.html'));
   });
 
-app.get('/products', function (req, res) {
-  res.sendFile(path.join(__dirname+'/public/html/products.html'));
+
+
+
+
+app.get('/journal', function (req, res) {
+  res.sendFile(path.join(__dirname+'/public/html/journal.html'));
   });
+
+
 
 app.get('/aboutus', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/html/aboutus.html'));
   });
 
-app.get('/contact', function (req, res) {
-  res.sendFile(path.join(__dirname+'/public/html/contact.html'));
-  });
+//app.get('/contact', function (req, res) {
+//  res.sendFile(path.join(__dirname+'/public/html/contact.html'));
+//  });
 
-app.get('/Signup', function (req, res) {
+app.get('/signup', function (req, res) {
   res.sendFile(path.join(__dirname+'/public/html/signup.html'));
   });
 
