@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Secret Garden</title>
+	<meta charset="utf-8">
+	<meta name="author" content="pixelhint.com">
+	<meta name="description" content="Crafty is a stunning HTML5/CSS3 multi-purpose template, well-coded, commented code and easy to customize"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main_responsive.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/carouFredSel.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+
+	<header>
+		<div class="wrapper">
+			<img src="img/logo.png" alt="Secret Garden" class="logo">
+			<a href="#" class="menu_icon" id="menu_icon"></a>
+			<nav id="nav_menu">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Journal</a></li>
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Sign Up</a></li>
+				</ul>
+			</nav>
+
+			
+		</div>
+	</header><!--  End Header  -->
+
+	<!--           css style              -->
+	<link rel="stylesheet" href="guide.css" media="screen">
+		<style>
+		body {
+		background-color:#E8E8E8;
+		}
+		.position{
+	 position:relative;
+	 left:290px; 
+	}
+		</style>	
+
+		<script src="http://izhuk.com/painter/8"></script>
+
+<script>
+    var painter = new Painter();
+</script>
+
+<div class="position">
+<p>The result must look like this (you can draw here):</p>
+
+<canvas id="drawarea" width="640" height="300"><a href="../doc/cant_see_canvas.html"
+			>Your browser doesn't support &lt;canvas&gt; tag</a></canvas>
+
+<script>
+	painter.setDrawArea(document.getElementById('drawarea'));
+    painter.setImageSize(640,300);
+</script>
+
+<br></br>
+<canvas id="toolpanel" width="395" height="65"></canvas>
+<script>
+  painter.addControlPanel( document.getElementById('toolpanel'), {
+    'tools': 'line,arrow_path,curve,rect,round_rect,oval,polyline,bezier,color_picker,flood_fill,move_rect,pan,'+
+	     'arrow,arrow_dim,area,filled_rect,filled_round_rect,filled_oval,polygon,point,eraser,text,copy_rect,select_rect',
+    'rows' : 2,
+    'cols' : 0,
+    'background':'#C0D0D0'
+  });
+</script>
+
+<br></br>
+<canvas id="colorpanel" width="449" height="49"></canvas>
+<script>
+    painter.addControlPanel( document.getElementById('colorpanel'), {
+	'colors': '#ff0000,#ffff00,#c0c000,#00ff00,#00ffff,#0000ff,#c000ff,#ff00ff,#ff00c0,'+
+		'#ffc0c0,#ffffc0,#f0f080,#c0ffc0,#c0ffff,#c0c0ff,#f080ff,#ffc0ff,#ffe0e0,'+
+		'#cc0000,#888800,#606000,#008800,#008888,#000088,#8000cc,#880088,#cc0080,'+
+		'#ffffff,#e0e0e0,#d0d0d0,#c0c0c0,#b0b0b0,#a0a0a0,#808080,#404040,#000000',
+	'rows' : 2,
+	'cols' : 0,
+	'background' :'#c0d0d0'
+    });
+</script>
+<canvas id="penpanel" width="199" height="24"></canvas>
+<script>
+    painter.addControlPanel( document.getElementById('penpanel'), {
+	'pens' : 'solid1,solid2,solid4,dashed1,dashed2,dashed4,zigzag2,zigzag4',
+	'rows' : 1,
+	'cols' : 0,
+	'background' :'#c0d0d0'
+    });
+</script>
+
+<br></br>
+<canvas id="patternpanel" width="247" height="24"></canvas>
+<script>
+    painter.addControlPanel( document.getElementById('patternpanel'), {
+	'patterns' : 'solid, hatching, crosshatch, dots, grid, saw, bricks, wave',
+	'rows' : 1,
+	'cols' : 0,
+	'background' :'#c0d0d0'
+    });
+</script>
+
+<canvas id="actionpanel" width="131" height="32"></canvas>
+<script>
+    painter.addControlPanel( document.getElementById('actionpanel'), {
+	'actions':'clear,undo,redo,font',
+	'rows' : 1,
+	'cols' : 0,
+	'background' :'#c0d0d0'
+    });
+</script>	
+
+	<!--
+	<footer>
+		<img src="img/logo_footer.png" alt="Secret Garden">
+	</footer>
+	 End Footer  -->
+
+</body>
+</html>

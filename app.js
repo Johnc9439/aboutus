@@ -3,8 +3,8 @@ var app = express();
 var bodyParser = require('body-parser');
 var path = require('path');
 var fs = require('fs');
-var filePath = 'text';
-var info = JSON.parse(fs.readFileSync(filePath));
+//var filePath = 'text';
+//var info = JSON.parse(fs.readFileSync(filePath));
 app.use(express.static('public'));
 //app.get('/',function(req,res){
 //	res.sendFile(path.join(__dirname+'/index.html'));
@@ -55,7 +55,7 @@ app.get('/Signup', function (req, res) {
 
 
 
-app.listen(8177);
+app.listen(8171);
 console.log('Server run');
 
 
