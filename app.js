@@ -2,7 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var favicon = require('path');
+var favicon = require('static-favicon');
+var path = require('path');
 var fs = require('fs');
 //connect to mongoDB
 var mongoose = require('mongoose');
