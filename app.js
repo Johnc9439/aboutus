@@ -8,13 +8,6 @@ var fs = require('fs');
 //connect to mongoDB
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://team19:secretsecret@localhost/team19');
-module.exports = mongoose.model('User', {
-	id: String,
-	username: String,
-	password: String,
-	email: String,
-	Nickname: String,
-});
 
 var app = express();
 
