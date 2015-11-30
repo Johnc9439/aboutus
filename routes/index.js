@@ -19,7 +19,7 @@ module.exports = function(passport){
 	}));
 	
 	router.get('/signup', function(req, res){
-		res.render(register', {message: req.flash('message')});
+		res.render('register', {message: req.flash('message')});
 	});
 	
 	router.post('/signup', passport.authenticate('signup', {
@@ -38,7 +38,7 @@ module.exports = function(passport){
 	});
 	
 	router.get('/signout', function(req, res){
-		req.logoout();
+		req.logout();
 		res.redirect('/index');
 	});
 	
