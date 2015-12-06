@@ -1,0 +1,17 @@
+extends layout
+
+block content
+	.container
+		section#content
+			form(action="")
+				h1 Login
+				div
+					input#username(type="text", placeholder="Username", required="")
+				div
+					input#password(type="password", placeholder="Password", required="")
+				div
+					input(type="submit", value="Log in")
+					a(href="#") Lost your password?
+					a(href="/register") Register
+	.button
+	
