@@ -17,21 +17,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	background: transparent;
 }
 
-.wrapper{
-	width: 1200px;
-	height: auto;
-	margin: 0 auto;
-    position: relative;
-}
-
-.feature a,
-.cta a.cta_btn,
-.testimonials #t_navigation a{
-	transition:all .2s linear;
-	-webkit-transition:all .2s linear;
-	-moz-transition:all .2s linear;
-	-o-transition:all .2s linear;
-}
 
 @import url(http://fonts.googleapis.com/css?family=Muli);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
@@ -59,7 +44,7 @@ h1.active {
   width: 100%;
   height: 100%;
   display: none;
-  background: rgba(199, 168, 78, .9);
+  background: rgba(0, 0, 0, .9);
   color: #f1f2f3;
   z-index: 120;
 }
@@ -80,7 +65,7 @@ h1.active {
 .nav-btn {
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 93%;
   height: 50px;
   width: 50px;
   background: url("http://i.imgur.com/qPQxa9T.png") rgba(44, 62, 80, 1.0) no-repeat;
@@ -146,89 +131,24 @@ h1.active {
 }
 /* navigation end */
 
-
-/*  header  
-header{
-    width: 100%;
-    height: 80px;
-
+.wrapper{
+	width: 1200px;
+	height: auto;
+	margin: 0 auto;
+    position: relative;
 }
 
-header .logo{
-    float: left;
-    margin-top: 21px;
+.feature a,
+.cta a.cta_btn,
+.testimonials #t_navigation a{
+	transition:all .2s linear;
+	-webkit-transition:all .2s linear;
+	-moz-transition:all .2s linear;
+	-o-transition:all .2s linear;
 }
-
-header nav{
-    overflow: hidden;
-    display: inline-block;
-    margin: 20px 0 0 40px;
-    padding: 13px 40px;
-    border-left: 1px #404040 solid;
-}
-
-header nav ul{
-    list-style: none;
-}
-
-header nav ul li{
-    float: left;
-    margin-left: 35px;
-    font-size: 16px;
-    font-family: 'lato_regular', arial;
-    letter-spacing: 1px;
-}
-
-header nav ul li:first-child{
-    margin-left: 0;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: #fff;
-}
-
-header ul.social{
-    float: right;
-    list-style: none;
-    margin-top: 23px;
-}
-
-header ul.social li{
-    float: left;
-    margin-left: 10px;
-}
-
-header ul.social li a{
-    display: block;
-    width: 35px;
-    height: 35px;
-    background: url('../img/sm.png') no-repeat;
-}
-
-header ul.social li a{
-    display: block;
-    width: 35px;
-    height: 35px;
-}
-
-header ul.social li a.fb{
-    background-position: 0 0;
-}
-
-header ul.social li a.twitter{
-    background-position: -36px 0;
-}
-
-header ul.social li a.gplus{
-    background-position: -72px 0;   
-}
-
-/* header end */
 
 body {
 	background: url(http://i.imgur.com/qm8IZxR.jpg?1);
-	
 	background-position: 0% 28%;  
 	color: #000;
 	font: 14px Arial;

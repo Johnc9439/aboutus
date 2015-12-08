@@ -1,42 +1,29 @@
-extends layout
+doctype html
+html(lang="en")
+	head
+		title Secret Garden
+		meta(charset="utf-8")
+		link(rel="stylesheet", type="text/css", href="../css/main.css")
+	body
+		header
+			div
+				img.logo(src="../img/flower-logo.png", alt="Secret Garden")
+				// scrollbar
+			.stuck-head
+				a#nav-open.nav-btn
+				span 
+				// fullscreen nav
+			#menu
+				nav.navigation
+					ul
+						li
+							a(href="/") Home
+						li
+							a(href="/journal") Journal
+						li
+							a(href="/aboutus") About Us
+						li
+							a(href="/login") Log In
 
-block content
-	section.billboard
-		.wrapper
-			.feature
-				.ficon
-					img(src="public/img/icon1.png", alt="")
-				.details_exp
-					h3 Creativity
-					p Differet way to keep a journal.
-			.feature
-				.ficon
-					img(src="public/img/icon2.png", alt="")
-				.details_exp
-					h3 Usability
-					p Easy to use.
-			.feature
-				.ficon
-					img(src="public/img/icon3.png", alt="")
-				.details_exp
-					h3 Entertainment
-					p Relieving pressure.
-					p Make you mind peaceful.
-						
-	section.info
-		.info_pic
-		.info_details
-			h3 HOW TO USE
-			p Move your fingers. 
-			a(href="")
-			| More Details
-			span &#8594;
-			// End Info
-	section.cta
-		h3 Take Action &#38; Keep A Drawing Journal now!
-		a.cta_btn(href="/signup") Sign up now!
-		span.cta_sep
-		// End cta
-footer
-	img(src="img/logo_footer.png", alt="Secret Garden")
-	// End Footer
+		script(type="text/javascript", src="https://code.jquery.com/jquery-2.1.4.min.js")
+		script(type="text/javascript", src="../js/navi.js")

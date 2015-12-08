@@ -3,32 +3,28 @@ html(lang="en")
 	head
 		title Secret Garden
 		meta(charset="utf-8")
-		meta(name="author", content="pixelhint.com")
-		meta(name="description", content="Crafty is a stunning HTML5/CSS3 multi-purpose template, well-coded, commented code and easy to customize")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
-		link(rel="stylesheet", type="text/css", href="../css/reset.css")
-		link(rel="stylesheet", type="text/css", href="../css/main_responsive.css")
 		link(rel="stylesheet", type="text/css", href="../css/main.css")
-		link(rel="stylesheet", type="text/css", href="../css/login.css")
 		script(type="text/javascript", src="../js/jquery.js")
 		script(type="text/javascript", src="../js/carouFredSel.js")
 		script(type="text/javascript", src="../js/main.js")
-		
 	body
 		header
-			.wrapper
-				img.logo(src="img/logo.png", alt="Secret Garden")
-				a#menu_icon.menu_icon(href="/")
-				nav#nav_menu
-					ul
-						li
-							a(href="/") Index
-						li
-							a(href="/Journal") Journal
-						li
-							a(href="/aboutus") About Us
-						li
-							a(href="/login") Log In
+			.stuck-head
+				a#nav-open.nav-btn
+				span
+				// fullscreen nav
+				#menu
+					nav.navigation
+						ul
+							li
+								a(href="/") Home
+							li
+								a(href="/journal") Journal
+							li
+								a(href="/aboutus") About Us
+							li
+								a(href="/login") Log in	
 
-	block content
-	
+	script(type="text/javascript", src="https://code.jquery.com/jquery-2.1.4.min.js")
+	script(type="text/javascript", src="../js/navi.js")
+
