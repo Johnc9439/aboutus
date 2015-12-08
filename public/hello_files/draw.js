@@ -15,11 +15,25 @@ var canvasLeft;
 var size = 1;
 var color  = '#000000';
 
+var drawingAreaX = 111;
+         var drawingAreaY = 11;
+         var drawingAreaWidth = 267;
+         var drawingAreaHeight = 200;
+	
+	     var outlineImage = new Image();
+		 
+		 
+	       outlineImage.src = "hello_files/img/duck.png";
+
+
+
 //画图形
 var draw_graph = function(graphType,obj){	
+context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 
 	//把蒙版放于画板上面
 	$("#canvas_bak").css("z-index",1);
+	
 	//先画在蒙版上 再复制到画布上
 		
 	chooseImg(obj);			
@@ -27,9 +41,11 @@ var draw_graph = function(graphType,obj){
 	
 	var startX;
 	var startY;
+	
 
 	//鼠标按下获取 开始xy开始画图
 	var mousedown = function(e){
+	context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 		context.strokeStyle= color;
 		context_bak.strokeStyle= color;
 		context_bak.lineWidth = size;
@@ -37,6 +53,7 @@ var draw_graph = function(graphType,obj){
 		startX = e.clientX - canvasLeft;
 		startY = e.clientY - canvasTop;
 		context_bak.moveTo(startX ,startY );
+		lastPoint = { x: e.clientX, y: e.clientY };
 		canDraw = true;			
 		
 		if(graphType == 'pencil'){
@@ -71,7 +88,13 @@ var draw_graph = function(graphType,obj){
 			context.moveTo(x ,y );
 			context.lineTo(x +2 ,y+2);
 			context.stroke();	
+			
 		}
+		
+		
+		
+		
+		
 	};
 
 	//选择功能按钮 修改样式
@@ -85,8 +108,19 @@ var draw_graph = function(graphType,obj){
 		$(obj).addClass("border_choose");
 	}
 
+	function chooseImg(obj){
+		var imgAry  = $("#drawController img");
+		for(var i=0;i<imgAry.length;i++){
+			$(imgAry[i]).removeClass('border_choose');
+			$(imgAry[i]).addClass('border_nochoose');				
+		}
+		$(obj).removeClass("border_nochoose");
+		$(obj).addClass("border_choose");
+	}
+	
 	// 鼠标移动
 	var  mousemove = function(e){
+	context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 		e=e||window.event;
 		var x = e.clientX   - canvasLeft;
 		var y = e.clientY  - canvasTop;	
@@ -101,6 +135,7 @@ var draw_graph = function(graphType,obj){
 				context_bak.lineTo(startX  ,y );
 				context_bak.lineTo(startX  ,startY );
 				context_bak.stroke();
+				
 			}
 		//直线
 		}else if(graphType =='line'){						
@@ -114,13 +149,53 @@ var draw_graph = function(graphType,obj){
 		//画笔
 		}else if(graphType == 'pencil'){
 			if(canDraw){
+			context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 				context_bak.lineTo(e.clientX   - canvasLeft ,e.clientY  - canvasTop);
-				context_bak.stroke();						
+				context_bak.stroke();
+              
+				
+				
+			}
+			
+		//圆 未画得时候 出现一个小圆
+		}else if(graphType == 'test'){
+			if(canDraw){
+			     context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
+                context_bak.lineWidth = 3;
+			    context_bak.lineJoin = context_bak.lineCap = 'round';
+				 
+                 
+                 
+				context_bak.beginPath();
+				context_bak.globalAlpha = 1;
+				context_bak.moveTo(lastPoint.x- canvasLeft, lastPoint.y- canvasTop);
+				context_bak.lineTo(e.clientX- canvasLeft, e.clientY- canvasTop);
+				context_bak.stroke();
+				 				 								
+                 context_bak.moveTo(lastPoint.x- canvasLeft - 4, lastPoint.y - 4- canvasTop);
+                 context_bak.lineTo(e.clientX - canvasLeft- 4, e.clientY - 4- canvasTop);
+                 context_bak.stroke();
+  
+                 context_bak.moveTo(lastPoint.x- canvasLeft - 2, lastPoint.y - 2- canvasTop);
+                 context_bak.lineTo(e.clientX- canvasLeft - 2, e.clientY - 2- canvasTop);
+                 context_bak.stroke();
+  
+                 context_bak.moveTo(lastPoint.x- canvasLeft + 2, lastPoint.y + 2- canvasTop);
+                 context_bak.lineTo(e.clientX- canvasLeft + 2, e.clientY + 2- canvasTop);
+                 context_bak.stroke();
+  
+                 context_bak.moveTo(lastPoint.x- canvasLeft + 4, lastPoint.y + 4- canvasTop);
+                 context_bak.lineTo(e.clientX- canvasLeft + 4, e.clientY + 4- canvasTop);
+                 context_bak.stroke();   
+				 
+				 lastPoint = {x: e.clientX, y: e.clientY }; 
+				 
 			}
 		//圆 未画得时候 出现一个小圆
 		}else if(graphType == 'circle'){						
 			clearContext();
 			if(canDraw){
+			context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 				context_bak.beginPath();			
 				var radii = Math.sqrt((startX - x) *  (startX - x)  + (startY - y) * (startY - y));
 				context_bak.arc(startX,startY,radii,0,Math.PI * 2,false);									
@@ -133,6 +208,7 @@ var draw_graph = function(graphType,obj){
 		//涂鸦 未画得时候 出现一个小圆
 		}else if(graphType == 'handwriting'){											
 			if(canDraw){
+			
 				context_bak.beginPath();	
 				context_bak.strokeStyle = color;
 				context_bak.fillStyle  = color;
@@ -141,15 +217,17 @@ var draw_graph = function(graphType,obj){
 				context_bak.stroke();
 				context_bak.restore();
 			}else{	
+			context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 				clearContext();
 				context_bak.beginPath();					
 				context_bak.fillStyle  = color;
-				context_bak.arc(x,y,size*10,0,Math.PI * 2,false);
+				//context_bak.arc(x,y,size*10,0,Math.PI * 2,false);
 				context_bak.fill();
 				context_bak.stroke();
 			}
 		//橡皮擦 不管有没有在画都出现小方块 按下鼠标 开始清空区域
 		}else if(graphType == 'rubber'){	
+		    context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 			context_bak.lineWidth = 1;
 			clearContext();
 			context_bak.beginPath();			
@@ -180,6 +258,10 @@ var draw_graph = function(graphType,obj){
 	$(canvas_bak).bind('mousemove',mousemove);
 	$(canvas_bak).bind('mouseup',mouseup);
 	$(canvas_bak).bind('mouseout',mouseout);
+	
+	context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
+	 
+	
 }
 
 
@@ -191,9 +273,12 @@ var draw_graph = function(graphType,obj){
 var clearContext = function(type){
 	if(!type){
 		context_bak.clearRect(0,0,canvasWidth,canvasHeight);
+		context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
 	}else{
 		context.clearRect(0,0,canvasWidth,canvasHeight);
 		context_bak.clearRect(0,0,canvasWidth,canvasHeight);
+		context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
+		
 	}
 }
 

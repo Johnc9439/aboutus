@@ -1,21 +1,34 @@
 body{
 	font-size : 12px;
+	margin:0;
+	padding:0;
+	background: url("../hello_files/img/bg.png") center center fixed no-repeat;
+	-moz-background-size: cover; 
+	background-size:  100% auto;
 }
 
-canvas {   
+canvas {    
 	border-width: 1px;    
-	border-style: groove;    
-	border-color: rgba(20, 126, 239, 0.50);
+	border-style: solid;    
+	border-color: #BBBBBB;
 	position: absolute;
 	z-index : 0;
-	left:238px;
-	top:79px;
+	left:383px;
+	top:110px;
+	
 } 
+
+#canvas_bak {
+
+background-image:url("hello_files/img/duck");
+
+}
+
 
 #drawController{
 	position: absolute;
-	left:152px;
-	top:70px;
+	left:217px;
+	top:156px;
 	width : 40px;
 }
 
@@ -24,16 +37,15 @@ canvas {
 
 .border_nochoose {
 	border-width: 2px;  
-	border-style: groove;     
-	
-	margin-top : 5px;
+ 	margin-top : 5px;
 }
 
 .border_choose {
 	border-width: 2px;  
 	border-style: groove;     
-	border-color: rgb(230,69,4);
+	border-color: red;
 	margin-top : 5px;
+	
 }
 
 table tr td a{
@@ -49,23 +61,23 @@ table tr td img{
 
 
 
-.i1{background:#000000;}
-.i2{background:#FF0000}
-.i3{background:#80FF00;}
-.i4{background:#00FFFF;}
-.i5{background:#808080;}
-.i6{background:#FF8000;}
-.i7{background:#408080;}
-.i8{background:#8000FF;}
-.i9{background:#CCCC00;}
+.i1{background:#000000 ; border-radius: 50%; border: 3px solid; width:30px;height:30px;}
+.i2{background:red;border-radius: 50%; border: 3px solid; width:30px;height:30px;}
+.i3{background:orange;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i4{background:yellow;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i5{background:green;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i6{background:blue;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i7{background:purple;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i8{background:brown;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i9{background:black;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
 
 .color {
-	width : 250px;
+	width : 320px;
 	height : 22px;
 	position: relative;
 	position: absolute;
-	left: 226px;
-    top: -37px;
+	left: 292px;
+    top: -99px;
 
 	z-index:10;
 }
@@ -83,3 +95,120 @@ table tr td img{
 	position: absolute;
 	display:none;
 }
+
+/* navigation */
+@import url(http://fonts.googleapis.com/css?family=Muli);
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+h1 {
+  text-align: center;
+  margin: 25% auto auto auto;
+  font-size: 2em;
+  font-family: 'Muli', sans-serif;
+}
+
+h1.active {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0, 0, 0, .9);
+  color: #f1f2f3;
+  z-index: 120;
+}
+
+#menu.active {
+  display: block;
+}
+
+.stuck-head {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 1030;
+  margin-bottom: 0;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 30px;
+  left: 93%;
+  height: 50px;
+  width: 50px;
+  background: url("http://i.imgur.com/qPQxa9T.png") rgba(44, 62, 80, 1.0) no-repeat;
+  background-position: center center;
+  background-size: 60%;
+  opacity: 0.9;
+  border-radius: 100%;
+  padding: .2em;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.nav-btn.active {
+  background: url("http://i.imgur.com/ee2nSd1.png") no-repeat;
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+  border-radius: 50%;
+  background-position: 50% 50%;
+}
+
+.nav-btn span {
+  display: none;
+}
+
+.navigation {
+  width: 100%;
+}
+
+.navigation ul {
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding-top: 10em;
+  padding-left: 0;
+}
+
+.navigation ul li {
+  text-align: center;
+  clear: both;
+  padding-top: 5px;
+  padding-left: 1em;
+  padding-bottom: 1em;
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  font-size: 2.2em;
+}
+
+.navigation ul li a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.navigation ul li a:hover {
+  color: #2c3e50;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
+}
+/* navigation end */
+
+
+

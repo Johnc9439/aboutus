@@ -13,33 +13,33 @@ var removeStorage = function(key){
 }
 
 
-//var callBackStorage = function(e){
-//	initHistorty();
-//}
+var callBackStorage = function(e){
+	initHistorty();
+}
 
 
-//var initHistorty = function(){
+var initHistorty = function(){
 
-//	for(var i=1;i<9;i++){
-//		var dataUrl = getStorage(i);
-//		if(dataUrl!=null&&dataUrl!=''){
-//			//图片
-//			$("#history_"+i).attr("src",dataUrl);
-//			//下载链接
-//			$("#history_download_"+i).attr("href",dataUrl);
-//			//删除链接
-//			$("#history_del_"+i).attr("href","javascript:void(0)");
-//		}else{
-//			//图片
-//			$("#history_"+i).attr("src",'/images/draw/noimg.png');
-//			//下载链接
-//	//		$("#history_download_"+i)[0].removeAttribute('href');  
-//			//删除链接
-//			$("#history_del_"+i)[0].removeAttribute('href');  
-//			
-//		}
-//	}
-//}
+	for(var i=1;i<9;i++){
+		var dataUrl = getStorage(i);
+		if(dataUrl!=null&&dataUrl!=''){
+			//图片
+			$("#history_"+i).attr("src",dataUrl);
+			//下载链接
+			$("#history_download_"+i).attr("href",dataUrl);
+			//删除链接
+			$("#history_del_"+i).attr("href","javascript:void(0)");
+		}else{
+			//图片
+			$("#history_"+i).attr("src",'/images/draw/noimg.png');
+			//下载链接
+			$("#history_download_"+i)[0].removeAttribute('href');  
+			//删除链接
+			$("#history_del_"+i)[0].removeAttribute('href');  
+			
+		}
+	}
+}
 
 //保存
 var save = function(){
