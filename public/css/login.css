@@ -227,7 +227,7 @@ header ul.social li a.gplus{
 /* header end */
 
 body {
-	background:  url(http://i.imgur.com/qm8IZxR.jpg?1);
+	background: url(http://i.imgur.com/qm8IZxR.jpg?1);
 	
 	background-position: 0% 28%;  
 	color: #000;
@@ -235,6 +235,8 @@ body {
 	margin: 0 auto;
 	padding: 0;
 	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 h1{ font-size:28px;}
 h2{ font-size:26px;}

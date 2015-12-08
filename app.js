@@ -105,9 +105,9 @@ module.export =app;
   // res.sendFile(path.join(__dirname+'/public/html/register.html'));
   // });
 
-app.get('/hello', function (req, res) {
-  res.sendFile(path.join(__dirname+'/public/html/hello.html'));
-  });
+//app.get('/hello', function (req, res) {
+//  res.sendFile(path.join(__dirname+'/public/html/hello.html'));
+//  });
 
 
 
