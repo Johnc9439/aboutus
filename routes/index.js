@@ -23,7 +23,7 @@ module.exports = function(passport){
 	}));
 	
 	router.get('/signup', function(req, res){
-		res.render('signup', {message: req.flash('message')});
+		res.render('register', {message: req.flash('message')});
 	});
 	
 	router.post('/signup', passport.authenticate('signup', {
