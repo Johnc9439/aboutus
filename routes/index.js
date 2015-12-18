@@ -35,9 +35,9 @@ module.exports = function(passport){
 	router.get('/home', isAuthenticated, function(req, res){
 		res.render('home', {user: req.user});
 	});
-	
-	router.get('/journal', isAuthenticated, function(req, res){
-		res.render('journal', {user: req.user});
+
+	router.get('/journal', function(req, res){
+		res.render('journal');
 	});
 	
 	router.get('/signout', function(req, res){
