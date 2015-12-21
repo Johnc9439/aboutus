@@ -20,7 +20,7 @@ canvas {
 
 #canvas_bak {
 
-background-image:url("hello_files/img/duck");
+background-image:url("../hello_files/img/duck.png") center center fixed no-repeat;
 
 }
 
@@ -61,7 +61,7 @@ table tr td img{
 
 
 
-.i1{background:#000000 ; border-radius: 50%; border: 3px solid; width:30px;height:30px;}
+.i1{background:white; border-radius: 50%; border: 3px solid; width:30px;height:30px;}
 .i2{background:red;border-radius: 50%; border: 3px solid; width:30px;height:30px;}
 .i3{background:orange;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
 .i4{background:yellow;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
