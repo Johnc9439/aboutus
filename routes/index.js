@@ -36,6 +36,23 @@ module.exports = function(passport){
 		res.render('home', {user: req.user});
 	});
 
+	router.get('/product', isAuthenticated, function(req, res){
+		res.render('product', {user: req.user});
+	});
+
+	//router.post('/product', isAuthenticated, function(req, res){
+	//	var imgData = req.body.imgData;
+	//	var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
+	//	var dataBuffer = new Buffer(base64Data, 'base64');
+	//		fs.writeFile("out.png", dataBuffer, function(err) {
+	//		if(err){
+	//	  		res.send(err);
+	//		}else{
+	//	  		res.send("保存成功！");
+	//		}
+	//	});
+	//});
+	
 	router.get('/journal', function(req, res){
 		res.render('journal');
 	});
