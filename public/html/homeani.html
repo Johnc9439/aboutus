@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+     <title>loading animation</title>
+     <link rel=stylesheet type="text/css" href="css/new.css">
+	 <link rel=stylesheet type="text/css" href="css/rabbit.css">
+	 <link rel=stylesheet type="text/css" href="css/black.css">
+	 <!--<link rel=stylesheet type="text/css" href="cat.css">-->
+     
+	 
+</head>
+<body>
+
+
+<div id="bee"> 
+  <!--<div class="cat">
+  <div class="head">
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+    <div class="eye left"></div>
+    <div class="eye right"></div>
+    <div class="nose"></div>
+    <div class="mouth"></div>
+    <div class="pink left"></div>
+    <div class="pink right"></div>
+  </div>
+
+</div>-->
+<div class="rabbit">
+</div>
+</div>
+
+
+<div class="fall" onmouseenter="usePopUp()"></div>
+<img src="img/hole.png" class="hole" >
+
+
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script  src="js/new.js"></script>
+
+<script>
+
+function usePopUp(){
+
+//var features=' scrollbars=yes, resizable=no';
+
+//window.open(url, 'named', features).focus();
+var url = "home.html" ;
+if (!window.winvar || winvar.closed) winvar = window.open(url);
+else winvar.location = url;
+window.close();
+ 
+
+}
+
+</script>
+
+</body>
+</html>
