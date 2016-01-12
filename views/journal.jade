@@ -16,10 +16,10 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       var cancelList = new Array();
       //撤?的次?
       var cancelIndex = 0;
-      var drawingAreaX = 280;
-      var drawingAreaY = 180;
-      var drawingAreaWidth = 267;
-      var drawingAreaHeight = 200;
+      var drawingAreaX = 50;
+      var drawingAreaY = 50;
+      var drawingAreaWidth = 640;
+      var drawingAreaHeight = 440;
       var outlineImage = new Image();
       outlineImage.src = "hello_files/img/duck.png";
       $(function(){
@@ -223,6 +223,9 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       if(obj == 'duck3'){
       outlineImage.src='hello_files/img/duck3.png'; 
       }
+      if(obj == 'rocket'){
+      outlineImage.src='img/rocket.png';
+      }
       clearContext('1');
       }
 
@@ -282,6 +285,8 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         img.img.border_nochoose(src='./hello_files/img/duck3.png', width='55px', height='55px', title='duck', onclick="changeImage('duck3', this)")
         br
         img.img.border_nochoose(src='./hello_files/img/sheep.png', width='55px', height='55px', title='sheep', onclick="changeImage('sheep', this)")
+        br
+        img.img.border_nochoose(src='./img/rocket.png', width='55px', height='55px', title='rocket', onclick="changeImage('rocket', this)")
     div(style='float:left;width:30%')
       canvas#canvas(width='500', height='400')
         | 瀏覽器不支持哦

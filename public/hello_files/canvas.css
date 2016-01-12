@@ -2,7 +2,7 @@ body{
 	font-size : 12px;
 	margin:0;
 	padding:0;
-	background: url("../img/journal_bg.png") center center fixed no-repeat;
+	background: url("../img/storybook.png") center center fixed no-repeat;
 	-moz-background-size: cover; 
 	background-size:  100% auto;
 	overflow: hidden;
@@ -16,7 +16,7 @@ canvas {
 	z-index : 0;
 	left:383px;
 	top:110px;
-	background-color: rgba(255, 255, 255, 0.2);
+	background-color: rgba(255, 255, 255, 0);
 
 	
 } 
@@ -82,7 +82,7 @@ table tr td img{
 	left: 292px;
     top: -99px;
 
-	z-index:7;
+	z-index:3;
 }
 
 
