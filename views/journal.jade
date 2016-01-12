@@ -16,10 +16,10 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       var cancelList = new Array();
       //撤?的次?
       var cancelIndex = 0;
-      var drawingAreaX = 50;
-      var drawingAreaY = 50;
-      var drawingAreaWidth = 640;
-      var drawingAreaHeight = 440;
+      var drawingAreaX = 300;
+      var drawingAreaY = 200;
+      var drawingAreaWidth = 267;
+      var drawingAreaHeight = 200;
       var outlineImage = new Image();
       outlineImage.src = "hello_files/img/duck.png";
       $(function(){
@@ -203,27 +203,41 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       var changeImage=function(obj){
       clearContext('1');
       if(obj == 'duck'){
+      drawingAreaX = 300;
+      drawingAreaY = 200;
+      drawingAreaWidth = 267;
+      drawingAreaHeight = 200;
       outlineImage.src='hello_files/img/duck.png';
       }
       if(obj == 'nothing'){
       outlineImage.src='hello_files/img/nothing.png';
       }
-      if(obj == 'bear'){
-      outlineImage.src='hello_files/img/bear.png';
+      if(obj == 'animal'){
+      drawingAreaX = 50;
+      drawingAreaY = 50;
+      drawingAreaWidth = 640;
+      drawingAreaHeight = 440;
+      outlineImage.src='img/animal.png';
       }
-      if(obj == 'dog'){
-      outlineImage.src='hello_files/img/dog.png';
+      if(obj == 'hedgehog'){
+      drawingAreaX = 50;
+      drawingAreaY = 50;
+      drawingAreaWidth = 640;
+      drawingAreaHeight = 440;
+      outlineImage.src='img/hedgehog.png';
       }
-      if(obj == 'frog'){
-      outlineImage.src='hello_files/img/frog.png'; 
-      }
-      if(obj == 'sheep'){
-      outlineImage.src='hello_files/img/sheep.png'; 
-      }
-      if(obj == 'duck3'){
-      outlineImage.src='hello_files/img/duck3.png'; 
+      if(obj == 'couple'){
+      drawingAreaX = 50;
+      drawingAreaY = 50;
+      drawingAreaWidth = 640;
+      drawingAreaHeight = 440;
+      outlineImage.src='img/couple.png'; 
       }
       if(obj == 'rocket'){
+      drawingAreaX = 50;
+      drawingAreaY = 50;
+      drawingAreaWidth = 640;
+      drawingAreaHeight = 440;
       outlineImage.src='img/rocket.png';
       }
       clearContext('1');
@@ -250,6 +264,12 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         // type="image" alt="submit" > <!--src="./hello_files/img/brown.png" width="55px;" height="55px;">
         input#chooseColor.i9
         // type="image" alt="submit" > <!--src="./hello_files/img/black.png" width="55px;" height="55px;">
+        input#chooseColor.i10
+        input#chooseColor.i11
+        input#chooseColor.i12
+        input#chooseColor.i13
+        input#chooseColor.i14
+        input#chooseColor.i15
       img.img.border_choose(src='./hello_files/img/pencil.png', width='120px;', height='39px;', onclick="draw_graph('pencil',this)", title='鉛筆')
       br
       img.img.border_nochoose(src='./hello_files/img/handwriting.png', width='120px;', height='39px;', onclick="draw_graph('handwriting',this)", title='塗鴉')
@@ -271,22 +291,18 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       br
       // <img src="./hello_files/save.png" width="20px;" height="20px;" class="img border_nochoose" onclick="save()" title="保存"><br>
       a#downloadImage_a(href='#')
-        img.img.border_nochoose(src='./hello_files/img/download.png', width='55px;', height='55px;', title='下載', onclick='savename();')
+        img.img.border_nochoose(src='./hello_files/img/download.jpg', width='55px;', height='55px;', title='下載', onclick='savename();')
         //<img src="./hello_files/img/download.png" width="55px;" height="55px;" class="img border_nochoose" title="下載" onclick="downloadImage();">
       #img1
-        img.img.border_nochoose(src='./hello_files/img/bear.png', width='55px', height='55px', title='bear', onclick="changeImage('bear', this)") 
+        img.img.border_nochoose(src='./hello_files/img/duck.png', width='70px', height='70px', title='duck', onclick="changeImage('duck', this)")
         br
-        img.img.border_nochoose(src='./hello_files/img/duck.png', width='55px', height='55px', title='duck', onclick="changeImage('duck', this)")
+        img.img.border_nochoose(src='./img/animal.png', width='70px', height='70px', title='animal', onclick="changeImage('animal', this)")
         br
-        img.img.border_nochoose(src='./hello_files/img/dog.png', width='55px', height='55px', title='dog', onclick="changeImage('dog', this)")
+        img.img.border_nochoose(src='./img/hedgehog.png', width='70px', height='70px', title='hedgehog', onclick="changeImage('hedgehog', this)")
         br
-        img.img.border_nochoose(src='./hello_files/img/frog.png', width='55px', height='55px', title='frog', onclick="changeImage('frog', this)")
+        img.img.border_nochoose(src='./img/couple.png', width='70px', height='70px', title='duck', onclick="changeImage('couple', this)")
         br
-        img.img.border_nochoose(src='./hello_files/img/duck3.png', width='55px', height='55px', title='duck', onclick="changeImage('duck3', this)")
-        br
-        img.img.border_nochoose(src='./hello_files/img/sheep.png', width='55px', height='55px', title='sheep', onclick="changeImage('sheep', this)")
-        br
-        img.img.border_nochoose(src='./img/rocket.png', width='55px', height='55px', title='rocket', onclick="changeImage('rocket', this)")
+        img.img.border_nochoose(src='./img/rocket.png', width='70px', height='70px', title='rocket', onclick="changeImage('rocket', this)")
     div(style='float:left;width:30%')
       canvas#canvas(width='500', height='400')
         | 瀏覽器不支持哦

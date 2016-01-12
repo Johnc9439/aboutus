@@ -2,7 +2,7 @@ body{
 	font-size : 12px;
 	margin:0;
 	padding:0;
-	background: url("../img/storybook.png") center center fixed no-repeat;
+	background: url("../img/storybook4.png") center center fixed no-repeat;
 	-moz-background-size: cover; 
 	background-size:  100% auto;
 	overflow: hidden;
@@ -62,20 +62,26 @@ table tr td img{
 	margin-top : 5px;
 }
 
-
-
 .i1{background:white; border-radius: 50%; border: 3px solid; width:30px;height:30px;}
-.i2{background:red;border-radius: 50%; border: 3px solid; width:30px;height:30px;}
-.i3{background:orange;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
-.i4{background:yellow;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
-.i5{background:green;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
-.i6{background:blue;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
-.i7{background:purple;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
-.i8{background:brown;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
-.i9{background:black;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i3{background:red;border-radius: 50%; border: 3px solid; width:30px;height:30px;}
+.i2{background:lightCoral;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i4{background:orangered;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i5{background:orange;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i6{background:yellow;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i7{background:gold;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i12{background:navy;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i8{background:limeGreen;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i9{background:ForestGreen;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i10{background:LightBlue;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i11{background:RoyalBlue;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i14{background:DarkGray;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i13{background:MediumOrchid;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+.i15{background:black;border-radius: 50%; border: 3px solid;width:30px;height:30px;}
+
+
 
 .color {
-	width : 320px;
+	width : 680px;
 	height : 22px;
 	position: relative;
 	position: absolute;
