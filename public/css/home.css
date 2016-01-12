@@ -1,16 +1,10 @@
+
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300);
 @import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700);
 @charset "UTF-8";
 //@import "compass/css3";
 @font-face {
   font-family: 'sniglet';
-  src: 
-    url(http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvlQlYEbsez9cZjKsNMjLOwM.eot?#iefix) format('embedded-opentype'),
-    url('http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvr3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'sniglet-std-condensed-display-n5';
   src: 
     url(http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvlQlYEbsez9cZjKsNMjLOwM.eot?#iefix) format('embedded-opentype'),
     url('http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvr3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
@@ -32,7 +26,6 @@
 } 
 /*漸進畫面end*/
 
-
 @font-face {
   font-family: "untitled-font-1";
   src:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.eot");
@@ -40,7 +33,7 @@
     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.woff") format("woff"),
     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.ttf") format("truetype"),
     url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.svg#untitled-font-1") format("svg");
-  font-weight: normal; 
+  font-weight: normal;
   font-style: normal;
 }
 
@@ -130,6 +123,7 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Alegreya Sans', Arial, sans-serif;
+	text-transform: uppercase;
 }
 
 html {
@@ -163,7 +157,6 @@ ul, li {
 	list-style-type: none;
 }
 
-
 /*.pencilcat{
 
     width: 593px;
@@ -179,6 +172,7 @@ ul, li {
 	background-image: url(../img/section14.jpg);
 
  
+
 	}
 
 #section2{
@@ -497,9 +491,15 @@ h3 {
 	font-size: 6em;
 	margin-bottom: 20px;
     color: #ffffff;
-}
 
+        
+		background-image: url(../img/cat.png);
+		//background-size:80%;
+		background-repeat:no-repeat;
 
+	}
+
+	
 
 /* SLIDENAV STYLES - fullPage.js 
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -512,6 +512,7 @@ h3 {
     height: 4px;
     width: 4px;
     border: 0;
+
     background: #ffffff;
     left: 50%;
     top: 50%;
@@ -570,5 +571,5 @@ h3 {
 	nav li a {
 		padding: 3px;
 	}
-}
+}*/
 

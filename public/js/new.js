@@ -1,8 +1,10 @@
+
      var rabbit = document.getElementById("rabbit");
      document.addEventListener("mousemove", getMouse);
 
      rabbit.style.position = "absolute"; //css		
      var rabbitpos = {
+
        x: 0,
        y: 0
      };
@@ -20,7 +22,9 @@
        mouse.x = e.pageX;
        mouse.y = e.pageY;
        //Checking directional change
+
        if (mouse.x > rabbitpos.x) {
+
          dir = "right";
        } else {
          dir = "left";
@@ -29,6 +33,7 @@
 
      function followMouse() {
        //1. find distance X , distance Y
+
        var distX = mouse.x - rabbitpos.x;
        var distY = mouse.y - rabbitpos.y;
        //Easing motion
@@ -42,6 +47,7 @@
        }else{
 		  rabbit.style.left = rabbitpos.x +50+ "px";
           rabbit.style.top = rabbitpos.y + "px"; 
+
 	   }
 	   
        //Apply css class 

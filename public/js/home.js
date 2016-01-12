@@ -1,3 +1,4 @@
+
 //Long Shadow Text
 var shadow = {
     'distance': 50,
@@ -43,6 +44,7 @@ $('body').bind('mousemove',function(event) {
     shadow.angle = radian * 180 / Math.PI;
     refreshLongshadow();
 });
+
 
 // variables
 var $header_top = $('.header-top');

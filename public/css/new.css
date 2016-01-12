@@ -1,3 +1,4 @@
+
 body { background-image:url('../img/grass.jpg'); 
        height:100%;
 	   width:100%;
@@ -37,7 +38,6 @@ body { background-image:url('../img/grass.jpg');
         filter: FlipH;
         -ms-filter: "FlipH";
 }
-
 #rabbit {transition: transform .1s}
 
 .ovalHor {
@@ -48,4 +48,4 @@ body { background-image:url('../img/grass.jpg');
 			-webkit-border-radius:160px/80px;
 			border-radius: 160px/80px;
 		}		
-	
+
