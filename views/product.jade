@@ -5,7 +5,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     script(src='./hello_files/jquery-1.4.min.js')
     style(type='text/css').
     script(src='./hello_files/draw.js')
-    script(src='./hello_files/storage.js')  
+    //script(src='./hello_files/storage.js')  
     // <script src="./hello_files/storage.js"></script>
     link(href='./hello_files/canvas.css', type='text/css', rel='Stylesheet')
     script.
@@ -52,6 +52,23 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       $("#downloadImage_a")[0].href=canvas.toDataURL();
       $("#downloadImage_a").click();
       }
+
+      var saveImage = function(){
+      var canvasData = canvas.toDataURL("image/png");
+        console.log(canvasData);
+        $.ajax({
+            url: '/toserver',
+            data: 'canvas=' + canvasData,
+            type: 'POST',
+            datatype: 'json',
+            cache: false,
+           
+            success: function(){
+              console.log('OK');
+            }
+        });
+      }
+         
       //展??色??器
       //		var showColor = function(obj){
       //			var top = $(obj).offset().top;

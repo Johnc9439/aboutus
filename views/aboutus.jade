@@ -1,3 +1,68 @@
 extends layout
 
+append head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    link(rel='stylesheet', type='text/css', href='../css/aboutus.css')
+    link(rel='stylesheet', type='text/css', href='../css/demo.css')
+    link(rel='stylesheet', type='text/css', href='../css/common.css')
+    link(rel='stylesheet', type='text/css', href='../css/style7.css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:300,700', rel='stylesheet', type='text/css')
+    script(type='text/javascript', src='../js/modernizr.custom.79639.js')
+
 block content
+    ul.ch-grid
+      li
+        .ch-item.position1
+          .ch-info
+            .ch-info-front.ch-img-1
+            .ch-info-back
+              img.img1(src='../img/1_1.jpg')
+              .ribbon
+              .name 莊晴智
+              p 成大電機系
+              .intro front-end engineer
+      li
+        .ch-item.position2
+          .ch-info
+            .ch-info-front.ch-img-2
+            .ch-info-back
+              img.img1(src='../img/2_1.jpg')
+              .ribbon
+              .name 張雁鈞
+              p 成大工科系
+              .intro front-end engineer
+      li
+        .ch-item.position3
+          .ch-info
+            .ch-info-front.ch-img-5
+            .ch-info-back
+              img.img2(src='../img/logo-aboutus.png')
+              .rectangle
+              #contain 介紹
+               .word(style='white-space:pre') 我們是一群Gardener!建造一座屬於大眾的秘密花園,一個令人放鬆舒適的空間,
+               .word 在這裡每個人都是忘憂的孩子,雙手拿著畫筆與紙,交流、嬉戲,紀錄每個難忘的時刻。
+               .word 本站擁有簡易的繪圖工具面板,讓使用者能夠恣意地揮灑創意, 記錄生活點滴以及
+               .word 當下心情,透過文字,我們凝視自己,並留住日子的軌跡。在此我們誠摯邀請您,進入這
+               .word 只屬於快樂的國度,一同來玩吧!
+      li
+        .ch-item.position5
+          .ch-info
+            .ch-info-front.ch-img-3
+            .ch-info-back
+              img.img1(src='../img/4_1.jpg')
+              .ribbon
+              .name 黃俊錚
+              p 成大電機系
+              .intro visual designer
+      li
+        .ch-item.position4
+          .ch-info
+            .ch-info-front.ch-img-4
+            .ch-info-back
+              img.img1(src='../img/3_1.jpg')
+              .ribbon
+              .name 蔡永俊
+              p 成大電機系
+              .intro back-end engineer
+    .position
+      img(src='../img/flower-logo.png')

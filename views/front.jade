@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title Secret Garden
+    link(rel='stylesheet', type='text/css', href='../css/new.css')
+    link(rel='stylesheet', type='text/css', href='../css/rabbit.css')
+  body
+    #rabbit
+      .rabbit
+    .fall(onmouseenter='newPage()')
+    img.hole(src='./img/hole.png')
+    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(src='./js/new.js')
+    script.
+      var newPage = function(){
+      window.location.replace('/index');
+      }

@@ -1,0 +1,574 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300);
+@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,700);
+@charset "UTF-8";
+//@import "compass/css3";
+@font-face {
+  font-family: 'sniglet';
+  src: 
+    url(http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvlQlYEbsez9cZjKsNMjLOwM.eot?#iefix) format('embedded-opentype'),
+    url('http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvr3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'sniglet-std-condensed-display-n5';
+  src: 
+    url(http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvlQlYEbsez9cZjKsNMjLOwM.eot?#iefix) format('embedded-opentype'),
+    url('http://fonts.gstatic.com/s/sniglet/v7/1ZHjsYpklbehZSiZpN0bvr3hpw3pgy2gAi-Ip7WPMi0.woff') format('woff');
+}
+
+
+/* ICON STYLES - ICON FROM: http://fontastic.me/
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*漸進畫面*/
+@keyframes fade-in { 
+    0% {opacity: 0;}/*初始状态 透明度为0*/ 
+    40% {opacity: 0;}/*过渡状态 透明度为0*/ 
+    100% {opacity: 1;}/*结束状态 透明度为1*/ 
+} 
+@-webkit-keyframes fade-in {/*针对webkit内核*/ 
+    0% {opacity: 0;} 
+    40% {opacity: 0;} 
+    100% {opacity: 1;} 
+} 
+/*漸進畫面end*/
+
+
+@font-face {
+  font-family: "untitled-font-1";
+  src:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.eot");
+  src:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.eot#iefix") format("embedded-opentype"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.woff") format("woff"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.ttf") format("truetype"),
+    url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/untitled-font-1.svg#untitled-font-1") format("svg");
+  font-weight: normal; 
+  font-style: normal;
+}
+
+[class^="icon-"]:after,
+[class*=" icon-"]:after {
+  font-family: "untitled-font-1";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-up-open-big { display: inline-block; }
+
+.icon-up-open-big:after {
+  content: "a";
+  font-size: 2.5em;
+  display: block;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  color: black;
+  -webkit-transition: color .3s;
+          transition: color .3s;
+}
+
+.icon-up-open-big:hover:after {
+	color: white;	
+}
+
+.scroll-icon {
+	position: absolute;
+ 	left: 50%;
+  bottom: 30px;
+  padding: 0 10px;
+  	-webkit-transform: translateX(-50%);
+  	        transform: translateX(-50%);
+}
+
+
+
+/* HELPER CLASSES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.l-left {
+	float: left;
+}
+
+.l-right {
+	float: right;
+}
+
+.end {
+	margin-top: 30px;
+	font-size: 3em;
+	font-weight: bold;
+	opacity: 0;
+	-webkit-transform: translateY(300px);
+	        transform: translateY(300px);
+	-webkit-transition: opacity, -webkit-transform 1s;
+	        transition: opacity, -webkit-transform 1s;
+	        transition: opacity, transform 1s;
+	        transition: opacity, transform 1s, -webkit-transform 1s;
+	-webkit-transition-delay: 1s;
+	        transition-delay: 1s;
+}
+
+
+
+/* RESET-GENERAL STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Alegreya Sans', Arial, sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+	-webkit-font-smoothing: antialiased;
+  	-moz-osx-font-smoothing: grayscale;
+ 	text-rendering: optimizelegibility;
+}
+
+body {
+	font-family:  'sniglet-std-condensed-display-n5','Open Sans', sans-serif;
+	color: white;
+	letter-spacing: .18em;
+/*漸進畫面*/
+    animation: fade-in;/*动画名称*/ 
+    animation-duration: 4s;/*动画持续时间*/ 
+    -webkit-animation:fade-in 4s;/*针对webkit内核*/ 
+}
+/*
+html,
+body {
+  height: 100%;
+}
+*/
+a {
+	text-decoration: none;
+	color: white;
+}
+
+ul, li {
+	list-style-type: none;
+}
+
+
+/*.pencilcat{
+
+    width: 593px;
+    height: 207px;
+
+}*/
+
+
+
+/*投影片版本: background-image: url(../img/section13.jpg);*/
+/*電腦瀏覽版本: background-image: url(../img/section14.jpg);*/
+#section1{
+	background-image: url(../img/section14.jpg);
+
+ 
+	}
+
+#section2{
+		
+	text-align:center;
+	}
+
+	
+#section3{
+		/*Rainbow Background
+        height: 100%;
+ 		width: 100%;
+ 		background-color: #00BCD4;
+  		animation: rainbow 25s infinite;
+  		*/
+  		
+		background-image: url(../img/section31.jpg);
+		background-repeat:no-repeat; 
+		
+	}
+
+#cloud{
+        height: 100%;
+ 		width: 100%;	
+    	z-index:0;
+}
+
+#others{
+		
+		z-index:2;
+}
+
+  /* Rainbow Background Aimation */
+  @keyframes rainbow { 
+    0% { background: #00BCD4; }
+    25% { background: #00C853; }
+    50% { background: #C62828; }
+    75% { background: #4527A0; }
+    100% { background: #00BCD4; }
+  }
+	
+#slide1{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+
+	}
+
+#slide2{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+	
+#slide3{
+ 
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+	
+#slide4{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+
+#slide5{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+
+#slide6{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+
+#slide7{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+#slide8{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+
+#slide9{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+
+#slide10{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+
+#slide11{
+
+  	background-image: url(../img/bg20.jpg) ; 
+	background-repeat:no-repeat;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+ 	background-size: cover;
+ 	
+	}
+	
+
+#pencilcat{
+    width: 593px;
+    height: 207px;
+	/*position: absolute; 
+	top: 50%;
+ 	left: 50%;*/
+ 	margin: -20px 0 0 375px;   
+}   
+
+@-webkit-keyframes slide {
+  0% {
+	margin: -20px 0 0 375px; 
+  }
+
+  10% {
+	margin: -20px 0 0 500px; 
+  }
+
+
+  35% {
+	margin: -20px 0 0 -595px;  
+  }
+
+  40% {
+	margin: -20px 0 0 -595px;
+	visibility:hidden;
+  }
+
+  50% {
+	margin: -20px 0 0 1400px;
+	visibility:hidden;  
+  }
+
+  60% {
+	margin: -20px 0 0 1400px;  
+  }
+
+  100% {
+	margin: -20px 0 0 375px;  
+  }
+
+}
+
+
+/* 滑鼠放按鈕上讓鉛筆貓動*/
+.button-container:hover + #pencilcat{
+
+  -webkit-animation-name: slide;
+          animation-name: slide;
+  -webkit-animation-duration: 2.5s;
+          animation-duration: 2.5s;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+
+	
+	/*
+  	right:200px ;
+  	webkit-transition: right 3s;
+  	*/
+}
+
+/*title mask*/
+.text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 130px;
+  z-index: 2;
+}
+
+svg {
+  width: 100%;
+  height: inherit;
+}
+svg text {
+  text-anchor: middle;
+}
+svg #alpha {
+  fill: #666666;
+}
+svg #title {
+  letter-spacing: ;
+  font-size: 7em;
+  font-weight: 800;
+  text-transform: uppercase;
+
+}
+svg #subtitle {
+  letter-spacing: 8px;
+  font-size: 2em;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+svg #base {
+  fill: black;
+  -webkit-mask: url(#mask);
+          mask: url(#mask);
+}
+/*title mask end*/
+
+.slogan{
+	/*position:absolute;
+　	top:600px;
+	left:300px;*/
+	font-size: 0.5em;
+	font-weight: normal;
+	color:#ffffff;
+
+}
+
+#emphasis{
+	font-size: 1em;
+	font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI";, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	color:#ebff79;
+}
+
+section { 
+  text-align: center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+h2 {
+	font-size: 4.6em;
+	margin-bottom: 20px;
+    font-weight: normal;
+	color:#4b4a5d;
+}
+
+h4{
+	font-family: "游ゴシック", "Yu Gothic", "游ゴシック体", "YuGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "Meiryo UI";, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	font-size: 7em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+
+h5{
+	text-transform: uppercase;
+	font-size: 6em;
+	margin-bottom: 20px;
+    font-weight: bold;
+	color:#4b4a5d;
+}
+h3 {
+	font-family: 'Alegreya Sans', Arial, sans-serif;
+	font-weight: 300;
+	font-size: 6em;
+	margin-bottom: 20px;
+    color: #ffffff;
+}
+
+
+
+/* SLIDENAV STYLES - fullPage.js 
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    height: 4px;
+    width: 4px;
+    border: 0;
+    background: #ffffff;
+    left: 50%;
+    top: 50%;
+    margin: -2px 0 0 -2px;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+#fp-nav ul li a.active span, 
+.fp-slidesNav ul li a.active span, 
+#fp-nav ul li:hover a.active span, 
+.fp-slidesNav ul li:hover a.active span{
+    height: 12px;
+    width: 12px;
+    margin: -6px 0 0 -6px;
+    border-radius: 100%;
+ }
+
+
+/* MQ STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/*
+@media screen and (max-width: 767px) {
+	nav ul {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		    -ms-flex-direction: column;
+		        flex-direction: column;
+	}
+
+	nav li {
+		margin-top: 1px;
+	}
+  
+  nav li a {
+    font-size: 1.5em;
+  }
+  
+  .scroll-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+  
+  .open-menu ~ nav {
+		padding: 20px 0;
+	}
+
+	nav li a {
+		padding: 3px;
+	}
+}
+

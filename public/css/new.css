@@ -1,0 +1,51 @@
+body { background-image:url('../img/grass.jpg'); 
+       height:100%;
+	   width:100%;
+	   overflow-x: hidden;
+	   overflow-y: hidden;
+	   cursor:url('../img/carrot.png')  73 23, pointer !important;
+	 
+	 }
+
+.fall{
+	   position:relative;
+	   //background-color:black;
+	   left:140px;
+	   height: 100px;
+	   width: 20px;	   
+	   z-index:0;
+	   
+}	 
+
+.hole{
+
+	  z-index:-1;
+}
+.left {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+.right {
+        -moz-transform: scaleX(1);
+        -o-transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
+#rabbit {transition: transform .1s}
+
+.ovalHor {
+			background: black;
+			height: 100px;
+			width: 200px;			
+			-moz-border-radius: 160px/80px;
+			-webkit-border-radius:160px/80px;
+			border-radius: 160px/80px;
+		}		
+	

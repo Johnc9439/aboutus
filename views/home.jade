@@ -1,32 +1,39 @@
-doctype html
-html(lang="en")
-	head
-		title Secret Garden
-		meta(charset="utf-8")
-		meta(name="author", content="pixelhint.com")
-		meta(name="description", content="Crafty is a stunning HTML5/CSS3 multi-purpose template, well-coded, commented code and easy to customize")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
-		link(rel="stylesheet", type="text/css", href="../css/reset.css")
-		link(rel="stylesheet", type="text/css", href="../css/main_responsive.css")
-		script(type="text/javascript", src="../js/jquery.js")
-		script(type="text/javascript", src="../js/carouFredSel.js")
-		script(type="text/javascript", src="../js/main.js")
-		
-	body
-		header
-			.wrapper
-				img.logo(src="img/logo.png", alt="Secret Garden")
-				a#menu_icon.menu_icon(href="/home")
-				nav#nav_menu
-					ul
-						li
-							a(href="/Home") Home
-						li
-							a(href="/product") Journal
-						li
-							a(href="/aboutus") About Us
-						li
-							a(href="/signout") Sign Out
-					
-		ul Welcome #{user.nickname} :)
-					
+extends layout
+
+append head
+  link(rel='stylesheet prefetch', href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css')
+  link(rel='stylesheet', href='../css/home.css')
+  link(rel='stylesheet', href='../css/button2.css')
+  link(rel='stylesheet', href='../css/button.css')
+
+block content
+  #fullpage
+    section#section1.vertical-scrolling
+      h2 fullPage.js
+      h3 This is the first section
+    section#section2.vertical-scrolling
+      #slide1.horizontal-scrolling
+        h2 fullPage.js
+        h3
+          | This is the fifth section and it contains the first slide (actually section == first slide)
+      #slide2.horizontal-scrolling
+        h2 fullPage.js
+        h3 This is the second slide
+        p.end Thank you!
+      #slide3.horizontal-scrolling
+        h2 fullPage.js
+        h3 This is the second slide
+        p.end Thank you!
+      #slide4.horizontal-scrolling
+        h2 fullPage.js
+        h3 This is the second slide
+        p.end Thank you!
+      #slide5.horizontal-scrolling
+        h2 fullPage.js
+        h3 This is the second slide
+        p.end Thank you!
+    section#section3.vertical-scrolling
+      .container
+        .button-container
+          .button.-dark.center(onclick="window.location.replace('/product')")  Let's Doodle 
+

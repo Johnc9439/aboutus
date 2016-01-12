@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var User = require('../models/user');
+var Image = require('../models/image');
 
 var isAuthenticated = function(req, res, next){
 	if(req.isAuthenticated())
@@ -9,7 +11,19 @@ var isAuthenticated = function(req, res, next){
 
 module.exports = function(passport){
 	router.get('/', function(req, res){
+		res.render('front')
+	});
+
+	router.get('/index', function(req, res){
 		res.render('index')
+	});
+	
+	router.get('/view', function(req, res){
+		res.render('view')
+	});
+
+	router.get('/aboutus', function(req, res){
+		res.render('aboutus')
 	});
 
 	router.get('/login', function(req, res){
@@ -40,19 +54,6 @@ module.exports = function(passport){
 		res.render('product', {user: req.user});
 	});
 
-	//router.post('/product', isAuthenticated, function(req, res){
-	//	var imgData = req.body.imgData;
-	//	var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
-	//	var dataBuffer = new Buffer(base64Data, 'base64');
-	//		fs.writeFile("out.png", dataBuffer, function(err) {
-	//		if(err){
-	//	  		res.send(err);
-	//		}else{
-	//	  		res.send("保存成功！");
-	//		}
-	//	});
-	//});
-	
 	router.get('/journal', function(req, res){
 		res.render('journal');
 	});

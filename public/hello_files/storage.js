@@ -41,22 +41,15 @@
 //	}
 //}
 var User = require('../models/user');
-var Image = require('../models/image');
-var fs =require('fs');
-
 //保存
 var saveImage = function(){
-	var dataname = Date();
-	var dataUrl = canvas.toDataURL();
-	var newImage = new Image();
-
-}
-
-module.exports = function(username, done){
-	function(username, done){
-		newImage.username = User.username;
-		newImage.dataname = dataname;
-		newImage.url = dataUrl;
+	alert('ok');
+	console.log('ok');
+	return function(user, done){
+		var newImage = new Image();
+		var dataUrl = canvas.toDataURL();
+		var dataname = new Date();
+		newImage.imgs.push({username: User.username, dataname: dataname, url: dataUrl;});
 		newImage.save(function(err) {
 			if(err){
 				console.log('Error in Saving Image:' +err);
@@ -64,7 +57,7 @@ module.exports = function(username, done){
 			}
 			console.log('Save successful');
 			return done(null, newImage);
-		});	
+		}
 	}	
 }
 

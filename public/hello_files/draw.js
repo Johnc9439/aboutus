@@ -16,14 +16,11 @@ var size = 1;
 var color  = '#000000';
 
 var drawingAreaX = 111;
-         var drawingAreaY = 11;
-         var drawingAreaWidth = 267;
-         var drawingAreaHeight = 200;
-	
-	     var outlineImage = new Image();
-		 
-		 
-	       outlineImage.src = "hello_files/img/duck.png";
+var drawingAreaY = 11;
+var drawingAreaWidth = 267;
+var drawingAreaHeight = 200;
+var outlineImage = new Image();
+outlineImage.src = "hello_files/img/duck.png";
 
 
 

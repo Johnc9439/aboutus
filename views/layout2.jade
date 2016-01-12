@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    title Secret Garden
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='../css/normalize.css')
+    link(rel='stylesheet', href='../css/menu.css')
+  body
+    // ----------- menu ----------
+    header.header
+      .burger
+        .burger__patty
+        .burger__patty
+        .burger__patty
+      nav.menu
+        .menu__brand
+          a(href='')
+            .logo
+        ul.menu__list
+          li.menu__item
+            a.menu__link(href='/home') Home
+          li.menu__item
+            a.menu__link(href='/product') Journal
+          li.menu__item
+            a.menu__link(href='/aboutus') About Us
+          li.menu__item
+            a.menu__link(href='/signout') Log Out
+  block content
+  block footer
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js')
+      script(src='../js/home.js')
+      script(src='../js/menu.js') 

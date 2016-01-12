@@ -1,5 +1,7 @@
 html(xmlns='http://www.w3.org/1999/xhtml')
-  head
+  extends layout
+  
+  append head
     meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
     title Painting Broad
     script(src='./hello_files/jquery-1.4.min.js')
@@ -7,13 +9,15 @@ html(xmlns='http://www.w3.org/1999/xhtml')
     script(src='./hello_files/draw.js')
     // <script src="./hello_files/storage.js"></script>
     link(href='./hello_files/canvas.css', type='text/css', rel='Stylesheet')
+    link(href='../css/sweetalert.css', type='text/css', rel='stylesheet')
+    script(src='../js/sweetalert-dev.js')
     script.
       //撤?的array
       var cancelList = new Array();
       //撤?的次?
       var cancelIndex = 0;
-      var drawingAreaX = 111;
-      var drawingAreaY = 11;
+      var drawingAreaX = 280;
+      var drawingAreaY = 180;
       var drawingAreaWidth = 267;
       var drawingAreaHeight = 200;
       var outlineImage = new Image();
@@ -25,11 +29,11 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       $("#color input").click(chooseColor);
       context.drawImage(outlineImage, drawingAreaX, drawingAreaY, drawingAreaWidth, drawingAreaHeight);
       });
-      var drawingAreaX = 111;
-      var drawingAreaY = 11;
-      var drawingAreaWidth = 267;
-      var drawingAreaHeight = 200;
-      var canvasWidth = 500;
+      //var drawingAreaX = 300;
+      //var drawingAreaY = 300;
+      //var drawingAreaWidth = 267;
+      //var drawingAreaHeight = 200;
+      var canvasWidth = 720;
       var canvasHeight = 500;
       //初始化
       var initCanvas = function(){
@@ -46,6 +50,35 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       canvas_bak.height = canvasHeight;
       context_bak = canvas_bak.getContext('2d');
       }
+      var savename =  function(){
+      swal({
+        title: "Write a name !",
+        //text: 'your name:',
+        type: 'input',
+        showCancelButton: true,
+        closeOnConfirm: false,
+        animation: "slide-from-top",
+        //inputPlaceholder: "Write something",
+      },
+      function(inputValue){
+         if (inputValue === false) return false;
+           if (inputValue === "") {
+             swal.showInputError("You need to write something!");
+             return false;
+           }
+           swal("Nice!" + inputValue, "success");
+           var canvasData = canvas.toDataURL("image/png");
+           console.log(canvasData);
+           $.ajax({
+             url: '/imgname',
+             data: 'imgname=' + inputValue + '&canvas=' + canvasData,
+             type: 'POST',
+             dataType: 'json',
+             cache: false,
+           });
+      });
+      };
+
       //下??片
       var downloadImage = function(){
         $("#downloadImage_a")[0].href=canvas.toDataURL();
@@ -64,7 +97,7 @@ html(xmlns='http://www.w3.org/1999/xhtml')
         if($("#line_size").is(":hidden")){
           var top = $(obj).offset().top;
           var left = $(obj).offset().left;
-          $("#line_size")[0].style.left = left + $(obj).width() + 5; +  "px";
+          $("#line_size")[0].style.left = left + $(obj).width() + 5 +  "px";
           $("#line_size")[0].style.top = top   + "px";
           $("#line_size").show();
         }else{
@@ -167,24 +200,33 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       dragDiv.addEventListener('dragover', handleDragOver, false);
       dragDiv.addEventListener('drop', handleFileSelect, false);
       }
-  body
-    // scrollbar
-    .stuck-head
-      a#nav-open.nav-btn
-        span menu
-    // fullscreen nav
-    #menu
-      nav.navigation
-        ul
-          li
-            a(href='/') Home
-          li
-            a(href='/journal') Journal
-          li
-            a(href='/aboutus') About Us
-          li
-            a(href='/login') Sign In
-    // scrollbar end
+      var changeImage=function(obj){
+      clearContext('1');
+      if(obj == 'duck'){
+      outlineImage.src='hello_files/img/duck.png';
+      }
+      if(obj == 'nothing'){
+      outlineImage.src='hello_files/img/nothing.png';
+      }
+      if(obj == 'bear'){
+      outlineImage.src='hello_files/img/bear.png';
+      }
+      if(obj == 'dog'){
+      outlineImage.src='hello_files/img/dog.png';
+      }
+      if(obj == 'frog'){
+      outlineImage.src='hello_files/img/frog.png'; 
+      }
+      if(obj == 'sheep'){
+      outlineImage.src='hello_files/img/sheep.png'; 
+      }
+      if(obj == 'duck3'){
+      outlineImage.src='hello_files/img/duck3.png'; 
+      }
+      clearContext('1');
+      }
+
+  block content
     #drawController
       #color.color
         input#chooseColor.i1
@@ -222,13 +264,24 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       //br
       // <img src="./hello_files/img/square.png" width="20px;" height="20px;" class="img border_nochoose" onclick="draw_graph(&#39;square&#39;,this)" title="方形"><br>
       // <img src="./hello_files/img/circle.png" width="20px;" height="20px;" class="img border_nochoose" onclick="draw_graph(&#39;circle&#39;,this)" title="圓"><br>
-      img.img.border_nochoose(src='./hello_files/img/xx.png', width='55px;', height='55px;', onclick="clearContext('1')", title='清屏')
+      img.img.border_nochoose(src='./hello_files/img/xx.png', width='55px;', height='55px;', onclick="changeImage('nothing', this)", title='清屏')
       br
       // <img src="./hello_files/save.png" width="20px;" height="20px;" class="img border_nochoose" onclick="save()" title="保存"><br>
-      a#downloadImage_a(href='#', download='picture.png')
-        img.img.border_nochoose(src='./hello_files/img/download.png', width='55px;', height='55px;', title='下載', onclick='downloadImage();')
+      a#downloadImage_a(href='#')
+        img.img.border_nochoose(src='./hello_files/img/download.png', width='55px;', height='55px;', title='下載', onclick='savename();')
         //<img src="./hello_files/img/download.png" width="55px;" height="55px;" class="img border_nochoose" title="下載" onclick="downloadImage();">
-      br
+      #img1
+        img.img.border_nochoose(src='./hello_files/img/bear.png', width='55px', height='55px', title='bear', onclick="changeImage('bear', this)") 
+        br
+        img.img.border_nochoose(src='./hello_files/img/duck.png', width='55px', height='55px', title='duck', onclick="changeImage('duck', this)")
+        br
+        img.img.border_nochoose(src='./hello_files/img/dog.png', width='55px', height='55px', title='dog', onclick="changeImage('dog', this)")
+        br
+        img.img.border_nochoose(src='./hello_files/img/frog.png', width='55px', height='55px', title='frog', onclick="changeImage('frog', this)")
+        br
+        img.img.border_nochoose(src='./hello_files/img/duck3.png', width='55px', height='55px', title='duck', onclick="changeImage('duck3', this)")
+        br
+        img.img.border_nochoose(src='./hello_files/img/sheep.png', width='55px', height='55px', title='sheep', onclick="changeImage('sheep', this)")
     div(style='float:left;width:30%')
       canvas#canvas(width='500', height='400')
         | 瀏覽器不支持哦
@@ -242,7 +295,5 @@ html(xmlns='http://www.w3.org/1999/xhtml')
       img(src='./hello_files/img/line_size_5.png', width='80px;', height='12px;', onclick='chooseLineSize(5)')
       br
       img(src='./hello_files/img/line_size_7.png', width='80px;', height='12px;', onclick='chooseLineSize(7)')
-    script(type='text/javascript', src='https://code.jquery.com/jquery-2.1.4.min.js')
-    script(type='text/javascript', src='../js/navi.js')
     iframe#GetTheResultsHub(t='Browser', style='width: 1px; height: 1px; display: none;')
 

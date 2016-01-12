@@ -1,29 +1,66 @@
-doctype html
-html(lang="en")
-	head
-		title Secret Garden
-		meta(charset="utf-8")
-		link(rel="stylesheet", type="text/css", href="../css/main.css")
-	body
-		header
-			div
-				img.logo(src="../img/flower-logo.png", alt="Secret Garden")
-				// scrollbar
-			.stuck-head
-				a#nav-open.nav-btn
-				span 
-				// fullscreen nav
-			#menu
-				nav.navigation
-					ul
-						li
-							a(href="/") Home
-						li
-							a(href="/journal") Journal
-						li
-							a(href="/aboutus") About Us
-						li
-							a(href="/login") Login
+extends layout
 
-		script(type="text/javascript", src="https://code.jquery.com/jquery-2.1.4.min.js")
-		script(type="text/javascript", src="../js/navi.js")
+append head
+    meta(charset='UTF-8')
+    link(rel='stylesheet prefetch', href='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css')
+    link(rel='stylesheet', href='../css/home.css')
+    link(rel='stylesheet', href='../css/button2.css')
+    link(rel='stylesheet', href='../css/button.css')
+  
+block content
+    #fullpage
+      section#section1.vertical-scrolling
+        .text
+          svg
+            defs
+              mask#mask(x='0', y='0', width='100%', height='100%')
+                // alpha rectangle
+                // rectángulo alfa
+                rect#alpha(x='0', y='0', width='100%', height='100%')
+                // All text that you want
+                // Coloca todo el texto que necesites
+                text#title(x='50%', y='0', dy='1em', style="font-family: 'sniglet-std-condensed-display-n5',  monospace;") SECRET GARDEN
+                text#subtitle(x='50%', y='0', dy='5.5em') Color your day, color your life!
+            // Apply color here!
+            // Color aquí
+            rect#base(x='0', y='0', width='100%', height='100%')
+      section#section2.vertical-scrolling
+        #slide1.horizontal-scrolling
+          h5 What is Secret Garden?
+          img(src='../img/slide1.jpg')
+        #slide2.horizontal-scrolling
+          h5 It is a doodle playground
+          img(src='../img/slide2.jpg')
+        #slide3.horizontal-scrolling
+          h5 Why drawing?
+          img(src='../img/slide3.jpg')
+        #slide4.horizontal-scrolling
+          h5 Benefit of drawing
+          img(src='../img/slide4.jpg')
+        #slide5.horizontal-scrolling
+          h5 Moreover...
+          img(src='../img/slide5.jpg')
+        #slide6.horizontal-scrolling
+          h5 How to draw in Secret Garden?
+          img(src='../img/slide6.jpg')
+        #slide7.horizontal-scrolling
+          h5 User-friendly drawing panel
+          img(src='../img/slide7.jpg')
+        #slide8.horizontal-scrolling
+          h5 Comfortable reading page
+          img(src='../img/slide82.jpg')
+        #slide9.horizontal-scrolling
+          h5 Smoothing
+          img(src='../img/slide9.jpg')
+      section#section3.vertical-scrolling
+        #others.container
+          .longshadow
+            h4 秘密の花園へようこそ！
+            h4 一緒に楽しんで遊びましょう~
+          .button-container
+            #button.button.-dark.center(onclick="window.location.replace('/journal')")  Let's Doodle 
+          img#pencilcat(src='../img/pencilcat.png')
+   
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js')
+    script(src='../js/home.js')

@@ -37,24 +37,66 @@ initPassport(passport);
 var routes =require('./routes/index')(passport);
 app.use('/', routes);
 
+var imageSchema = new mongoose.Schema({
+	 name: String
+});
+
+var imageDetails = mongoose.model('image', imageSchema);
+
+app.use(bodyParser.urlencoded({extended:false}));
+
+app.post('/callname', function(req,res){
+	imageDetails.find({}, function(err,names){
+		if(!err){
+			console.log(names);
+			res.send(names);
+		}else {throw err;}
+	});
+});
+
+app.post('/imgname', function (req, res) {
+	var imgname = req.body.imgname;
+	console.log(imgname);
+	var Newimage = new imageDetails({
+		name: imgname
+	});
+	Newimage.save(function(err){
+		if (err){ throw err}
+		console.log('imagesave');
+	});
+        var imgdata  = req.body.canvas;
+	var base64 = imgdata.replace(/^data:image\/\w+;base64,/, "");
+	base64=base64.replace(/\s/g,"+");
+	console.log(base64);
+	var buffer = new Buffer(base64,'base64');
+	fs.writeFile("public/drawimg/"+imgname+".png",buffer,function(err){
+		if(err){
+			res.send(err);
+			console.log(err);
+		}
+		else{
+			res.send("success");
+		}
+	});
+});
+
 app.use(function(req, res, next){
 	var err = new Error('Not Found');
 	err.status =404;
 	next(err);
 });
 
-if(app.get('env') === 'development'){
-	app.use(function(err, req, res, next){
-		res.status(err.status || 500);
-		res.render('error', {
-			message: err.message,
-			error: err
-		});
+app.use(function(err, req, res, next){
+	res.status(err.status || 500);
+	res.render('error', {
+		message: err.message,
+		error: err
 	});
-}
+});
+
 
 app.listen(2314);
-console.log('Sever run');
+console.log('Server run');
 
 module.export =app;
 
